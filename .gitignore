@@ -1,0 +1,11 @@
+.sass-cache
+*.swp
+.DS_Store
+config.rb
+fire_app_log.txt
+/lib/*
+/temp
+/develop/*
+/Widget/*
+widgetlist.xml
+/node_modules/*
