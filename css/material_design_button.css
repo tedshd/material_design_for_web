@@ -1,0 +1,98 @@
+/**
+ *
+ * @authors Ted Shiu (tedshd@gmail.com)
+ * @date    2014-08-16 19:05:47
+ * @version $Id$
+ */
+/* line 29, ../sass/material_design_button.scss */
+button, a {
+  position: relative;
+  display: block;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* line 37, ../sass/material_design_button.scss */
+.ripple {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
+  -ms-transform: scale(0);
+  -webkit-transform: scale(0) rotate(0) translate(0, 0) skew(0, 0);
+  -moz-transform: scale(0) rotate(0) translate(0, 0) skew(0, 0);
+  -o-transform: scale(0) rotate(0) translate(0, 0) skew(0, 0);
+  transform: scale(0) rotate(0) translate(0, 0) skew(0, 0);
+}
+
+/* line 45, ../sass/material_design_button.scss */
+.ripple.show {
+  -webkit-animation-name: ripple;
+  -moz-animation-name: ripple;
+  -ms-animation-name: ripple;
+  -o-animation-name: ripple;
+  animation-name: ripple;
+  -webkit-animation-duration: 0.75s;
+  -moz-animation-duration: 0.75s;
+  -ms-animation-duration: 0.75s;
+  -o-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -ms-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes ripple {
+  /* line 52, ../sass/material_design_button.scss */
+  to {
+    -ms-transform: scale(2);
+    -webkit-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
+    -moz-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
+    -o-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
+    transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes ripple {
+  /* line 52, ../sass/material_design_button.scss */
+  to {
+    -ms-transform: scale(2);
+    -webkit-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
+    -moz-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
+    -o-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
+    transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
+    opacity: 0;
+  }
+}
+
+@-ms-keyframes ripple {
+  /* line 52, ../sass/material_design_button.scss */
+  to {
+    -ms-transform: scale(2);
+    -webkit-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
+    -moz-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
+    -o-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
+    transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple {
+  /* line 52, ../sass/material_design_button.scss */
+  to {
+    -ms-transform: scale(2);
+    -webkit-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
+    -moz-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
+    -o-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
+    transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
+    opacity: 0;
+  }
+}

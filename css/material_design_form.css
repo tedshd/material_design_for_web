@@ -22,35 +22,19 @@ input[type="text"] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transform: scale(1) rotate(0) translate(0, 0) skew(0, 0);
-  -moz-transform: scale(1) rotate(0) translate(0, 0) skew(0, 0);
-  -o-transform: scale(1) rotate(0) translate(0, 0) skew(0, 0);
-  transform: scale(1) rotate(0) translate(0, 0) skew(0, 0);
-  -webkit-transition-property: all;
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease;
-  -moz-transition-timing-function: ease;
-  -o-transition-timing-function: ease;
-  transition-timing-function: ease;
 }
-/* line 34, ../sass/material_design_form.scss */
+/* line 30, ../sass/material_design_form.scss */
 input[type="text"]:focus {
   outline: 0;
   border-color: #129FEA;
 }
 
-/* line 40, ../sass/material_design_form.scss */
+/* line 36, ../sass/material_design_form.scss */
 label {
   position: relative;
 }
 
-/* line 44, ../sass/material_design_form.scss */
+/* line 40, ../sass/material_design_form.scss */
 .material-design-label {
   top: -26px;
   left: 10px;
@@ -74,7 +58,7 @@ label {
   display: inline-block;
 }
 
-/* line 55, ../sass/material_design_form.scss */
+/* line 51, ../sass/material_design_form.scss */
 .input-focus {
   top: -50px;
   color: #129FEA;
@@ -85,11 +69,11 @@ label {
   transform: scale(0.875) rotate(0) translate(0, 0) skew(0, 0);
 }
 
-/* line 63, ../sass/material_design_form.scss */
+/* line 59, ../sass/material_design_form.scss */
 .input-error input[type="text"] {
   border-color: red;
 }
-/* line 66, ../sass/material_design_form.scss */
+/* line 62, ../sass/material_design_form.scss */
 .input-error .material-design-label {
   color: red;
 }

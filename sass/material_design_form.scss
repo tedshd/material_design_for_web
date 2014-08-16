@@ -27,10 +27,6 @@ input[type="text"] {
     vertical-align: baseline;
     background: transparent;
     @include box-sizing(border-box);
-    @include transform(1, 0, 0, 0, 0, 0);
-    @include transition-property(all);
-    @include transition-duration(.5s);
-    @include transition-timing-function(ease);
     &:focus {
         outline: 0;
         border-color: #129FEA;

@@ -1,0 +1,57 @@
+/**
+ *
+ * @authors Ted Shiu (tedshd@gmail.com)
+ * @date    2014-08-16 19:05:47
+ * @version $Id$
+ */
+
+@import "compass";
+// @import "compass/reset";
+@import "compass/css3";
+@import "compass/css3/transform-legacy";
+
+$animation-support: webkit, moz, o, ms, not khtml;
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+button, a {
+  position: relative;
+  display: block;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.ripple {
+    position: absolute;
+    background: rgba(0, 0, 0, .15);
+    pointer-events: none;
+    @include border-radius(100%);
+    -ms-transform: scale(0);
+    @include transform(0, 0, 0, 0, 0, 0);
+}
+.ripple.show {
+    @include experimental('animation-name', ripple, $animation-support);
+    @include experimental('animation-duration', .75s, $animation-support);
+    @include experimental('animation-timing-function', ease-out, $animation-support);
+}
+
+@include keyframes(ripple) {
+    to {
+        -ms-transform: scale(2);
+        @include transform(2, 0, 0, 0, 0, 0);
+        opacity: 0;
+    }
+}
