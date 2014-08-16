@@ -18,3 +18,41 @@ Use CSS3 achieve a part of material design
 
 * IE 10+
 * jQuery is not necessary(form has jquery ver)
+
+### Usage
+
+#### Form
+
+HTML
+
+```html
+
+<!-- basic -->
+<div class="input-group">
+    <input type="text">
+    <label class="material-design-label" for="">PassWord</label>
+</div>
+```
+
+Can add error style
+
+```html
+
+<!-- error style -->
+<div class="input-group input-error">
+    <input type="text">
+    <label class="material-design-label" for="">E-mail</label>
+</div>
+```
+
+#### button
+
+Default HTML tag `button` & `a` have material design effect
+
+If want to change
+
+Modify file `material_design_button.js`
+
+```javascrip
+if (target.tagName.toLowerCase() !== 'button' && target.tagName.toLowerCase() !== 'a') return false;
+```
