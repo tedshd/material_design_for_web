@@ -4,8 +4,11 @@ material_design_for_web
 
 ### Intro
 
-
 Use CSS3 achieve a part of material design
+
+### Demo
+
+[Demo](http://tedshd.github.io/material_design_for_web/)
 
 ### Feature
 
