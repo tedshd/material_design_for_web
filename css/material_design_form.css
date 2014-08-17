@@ -77,3 +77,8 @@ label {
 .input-error .material-design-label {
   color: red;
 }
+
+/* line 67, ../sass/material_design_form.scss */
+.error-msg {
+  color: red;
+}
