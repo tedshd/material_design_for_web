@@ -13,9 +13,7 @@
             return false;
         }
         var rect = target.getBoundingClientRect(),
-            ripple = target.querySelector('.ripple'),
-            top = e.pageY - rect.top - ripple.offsetHeight / 2 - window.pageYOffset,
-            left = e.pageX - rect.left - ripple.offsetWidth / 2 - window.pageXOffset;
+            ripple = target.querySelector('.ripple');
         if (!ripple) {
             ripple = document.createElement('span');
             ripple.className = 'ripple';
@@ -23,6 +21,8 @@
             target.appendChild(ripple);
         }
         ripple.classList.remove('show');
+        var top = e.pageY - rect.top - ripple.offsetHeight / 2 - window.pageYOffset,
+            left = e.pageX - rect.left - ripple.offsetWidth / 2 - window.pageXOffset;
         ripple.style.top = top + 'px';
         ripple.style.left = left + 'px';
         ripple.classList.add('show');
