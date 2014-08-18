@@ -70,7 +70,7 @@
   transform: scale(0.875) rotate(0) translate(0, 0) skew(0, 0);
 }
 /* line 63, ../sass/material_design_form.scss */
-.material-design-form .input-error input {
+.material-design-form .input-error input[type="text"], .material-design-form .input-error input[type="password"] {
   border-color: red;
 }
 /* line 66, ../sass/material_design_form.scss */

@@ -60,7 +60,7 @@ $labelPositionLeft: 10px;
     }
 
     .input-error {
-        input {
+        input[type="text"], input[type="password"] {
             border-color: red;
         }
         .material-design-label {
