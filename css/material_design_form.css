@@ -5,7 +5,7 @@
  * @version $Id$
  */
 /* line 15, ../sass/material_design_form.scss */
-input[type="text"] {
+input[type="text"], input[type="password"] {
   z-index: 1;
   position: relative;
   top: 0;
@@ -24,7 +24,7 @@ input[type="text"] {
   box-sizing: border-box;
 }
 /* line 30, ../sass/material_design_form.scss */
-input[type="text"]:focus {
+input[type="text"]:focus, input[type="password"]:focus {
   outline: 0;
   border-color: #129FEA;
 }

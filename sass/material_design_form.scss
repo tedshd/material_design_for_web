@@ -11,56 +11,61 @@
 @import "compass/css3/transform-legacy";
 
 $labelPositionLeft: 10px;
-
-input[type="text"] {
-    z-index: 1;
-    position: relative;
-    top: 0;
-    width: 320px;
-    margin: 30px 0 0 0;
-    padding: $labelPositionLeft;
-    display: block;
-    border-width: 0 0 3px 0;
-    border-color: #ccc;
-    border-style: solid;
-    border-radius: 0;
-    vertical-align: baseline;
-    background: transparent;
-    @include box-sizing(border-box);
-    &:focus {
-        outline: 0;
-        border-color: #129FEA;
+.material-design-form {
+    input[type="text"], input[type="password"] {
+        z-index: 1;
+        position: relative;
+        top: 0;
+        width: 320px;
+        margin: 30px 0 0 0;
+        padding: $labelPositionLeft;
+        display: block;
+        border-width: 0 0 3px 0;
+        border-color: #ccc;
+        border-style: solid;
+        border-radius: 0;
+        vertical-align: baseline;
+        background: transparent;
+        @include box-sizing(border-box);
+        &:focus {
+            outline: 0;
+            border-color: #129FEA;
+        }
     }
-}
 
-label {
-    position: relative;
-}
-
-.material-design-label {
-    top: -26px;
-    left: $labelPositionLeft;
-    -ms-transform: scale(1);
-    @include transform(1, 0, 0, 0, 0, 0);
-    @include transition-property(all);
-    @include transition-duration(.5s);
-    @include transition-timing-function(ease);
-    display: inline-block;
-}
-
-.input-focus {
-    top: -50px;
-    color: #129FEA;
-    -ms-transform: scale(0.875);
-    @include transform(0.875, 0, 0, 0, 0, 0);
-}
-
-.input-error {
-    input[type="text"] {
-        border-color: red;
+    .input-group {
+        text-align: left;
     }
+
+    label {
+        position: relative;
+    }
+
     .material-design-label {
-        color: red;
+        top: -26px;
+        left: $labelPositionLeft;
+        -ms-transform: scale(1);
+        @include transform(1, 0, 0, 0, 0, 0);
+        @include transition-property(all);
+        @include transition-duration(.5s);
+        @include transition-timing-function(ease);
+        display: inline-block;
+    }
+
+    .input-focus {
+        top: -50px;
+        color: #129FEA;
+        -ms-transform: scale(0.875);
+        @include transform(0.875, 0, 0, 0, 0, 0);
+    }
+
+    .input-error {
+        input[type="text"] {
+            border-color: red;
+        }
+        .material-design-label {
+            color: red;
+        }
     }
 }
 

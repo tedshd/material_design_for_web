@@ -7,10 +7,13 @@
  */
 
 $(function() {
-    $('body').on('focus', 'input[type="text"]', function() {
+    $('.material-design-form').on('reset', function() {
+        $('.material-design-label').removeClass('input-focus');
+    });
+    $('.material-design-form').on('focus', 'input', function() {
         $('+ .material-design-label', this).addClass('input-focus');
     });
-    $('body').on('blur', 'input[type="text"]', function() {
+    $('.material-design-form').on('blur', 'input', function() {
         if (0 >= $(this).val().length) {
             $('+ .material-design-label', this).removeClass('input-focus');
         }

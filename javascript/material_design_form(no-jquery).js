@@ -26,13 +26,13 @@
         }
     }
 
-    for (var i = document.querySelectorAll('input[type="text"]').length - 1; i >= 0; i--) {
+    for (var i = document.querySelectorAll('.material-design-form input').length - 1; i >= 0; i--) {
         document.querySelectorAll('input[type="text"]')[i].addEventListener('focus', function(e) {
             addClass(e.target.nextElementSibling, 'input-focus');
         });
     };
 
-    for (var i = document.querySelectorAll('input[type="text"]').length - 1; i >= 0; i--) {
+    for (var i = document.querySelectorAll('.material-design-form input').length - 1; i >= 0; i--) {
         document.querySelectorAll('input[type="text"]')[i].addEventListener('blur', function(e) {
             if (0 >= e.target.value.length) {
                 removeClass(e.target.nextElementSibling, 'input-focus');
