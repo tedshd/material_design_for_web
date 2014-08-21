@@ -33,6 +33,23 @@
     .button-secondary {
         background: rgb(66, 184, 221); /* this is a light blue */
     }
+    #custom {
+        width: 300px;
+        height: 50px;
+        border: solid 5px green;
+        background: transparent;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -moz-border-radius: 5px;
+    }
+    #custom:hover {
+        background: green;
+    }
+    #custom:active {
+        border: solid 5px #ff8800;
+        background: #ff8800;
+    }
 </style>
 
 <link rel="stylesheet" href="css/material_design_form.css">
@@ -81,6 +98,11 @@
     <button type="button" class="btn btn-link">Link</button>
     <h5>a</h5>
     <a class="btn btn-primary" href="#">Primary</a>
+    <hr>
+    <button>Normal Button</button>
+    <a href="javascript:void(0)">A_link</a>
+    <hr>
+    <button id="custom">Custom Button</button>
 </body>
 <script src="javascript/material_design_form(no-jquery).js"></script>
 <script src="javascript/material_design_button.js"></script>
