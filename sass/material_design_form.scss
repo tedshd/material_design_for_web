@@ -8,7 +8,7 @@
 @import "compass";
 // @import "compass/reset";
 @import "compass/css3";
-@import "compass/css3/transform-legacy";
+// @import "compass/css3/transform-legacy";
 
 $labelPositionLeft: 10px;
 .material-design-form {
@@ -44,8 +44,9 @@ $labelPositionLeft: 10px;
     .material-design-label {
         top: -26px;
         left: $labelPositionLeft;
-        -ms-transform: scale(1);
-        @include transform(1, 0, 0, 0, 0, 0);
+        // -ms-transform: scale(1);
+        // @include transform(1, 0, 0, 0, 0, 0);
+        @include scale(1, 1);
         @include transition-property(all);
         @include transition-duration(.5s);
         @include transition-timing-function(ease);
@@ -55,8 +56,9 @@ $labelPositionLeft: 10px;
     .input-focus {
         top: -50px;
         color: #129FEA;
-        -ms-transform: scale(0.875);
-        @include transform(0.875, 0, 0, 0, 0, 0);
+        // -ms-transform: scale(0.875);
+        // @include transform(0.875, 0, 0, 0, 0, 0);
+        @include scale(0.875, 0.875);
     }
 
     .input-error {

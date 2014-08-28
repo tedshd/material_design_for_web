@@ -18,19 +18,16 @@ button, a {
   position: absolute;
   background: rgba(0, 0, 0, 0.15);
   pointer-events: none;
-  -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
-  -ms-border-radius: 100%;
-  -o-border-radius: 100%;
+  -webkit-border-radius: 100%;
   border-radius: 100%;
-  -ms-transform: scale(0);
-  -webkit-transform: scale(0) rotate(0) translate(0, 0) skew(0, 0);
-  -moz-transform: scale(0) rotate(0) translate(0, 0) skew(0, 0);
-  -o-transform: scale(0) rotate(0) translate(0, 0) skew(0, 0);
-  transform: scale(0) rotate(0) translate(0, 0) skew(0, 0);
+  -moz-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  -webkit-transform: scale(0, 0);
+  transform: scale(0, 0);
 }
 
-/* line 45, ../sass/material_design_button.scss */
+/* line 46, ../sass/material_design_button.scss */
 .ripple.show {
   -webkit-animation-name: ripple;
   -moz-animation-name: ripple;
@@ -50,49 +47,38 @@ button, a {
 }
 
 @-webkit-keyframes ripple {
-  /* line 52, ../sass/material_design_button.scss */
   to {
-    -ms-transform: scale(2);
-    -webkit-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
-    -moz-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
-    -o-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
-    transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
+    -moz-transform: scale(2, 0);
+    -ms-transform: scale(2, 0);
+    -webkit-transform: scale(2, 0);
+    transform: scale(2, 0);
     opacity: 0;
   }
 }
-
 @-moz-keyframes ripple {
-  /* line 52, ../sass/material_design_button.scss */
   to {
-    -ms-transform: scale(2);
-    -webkit-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
-    -moz-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
-    -o-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
-    transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
+    -moz-transform: scale(2, 0);
+    -ms-transform: scale(2, 0);
+    -webkit-transform: scale(2, 0);
+    transform: scale(2, 0);
     opacity: 0;
   }
 }
-
 @-ms-keyframes ripple {
-  /* line 52, ../sass/material_design_button.scss */
   to {
-    -ms-transform: scale(2);
-    -webkit-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
-    -moz-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
-    -o-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
-    transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
+    -moz-transform: scale(2, 0);
+    -ms-transform: scale(2, 0);
+    -webkit-transform: scale(2, 0);
+    transform: scale(2, 0);
     opacity: 0;
   }
 }
-
 @keyframes ripple {
-  /* line 52, ../sass/material_design_button.scss */
   to {
-    -ms-transform: scale(2);
-    -webkit-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
-    -moz-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
-    -o-transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
-    transform: scale(2) rotate(0) translate(0, 0) skew(0, 0);
+    -moz-transform: scale(2, 0);
+    -ms-transform: scale(2, 0);
+    -webkit-transform: scale(2, 0);
+    transform: scale(2, 0);
     opacity: 0;
   }
 }

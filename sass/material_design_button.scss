@@ -8,7 +8,7 @@
 @import "compass";
 // @import "compass/reset";
 @import "compass/css3";
-@import "compass/css3/transform-legacy";
+// @import "compass/css3/transform-legacy";
 
 $animation-support: webkit, moz, o, ms, not khtml;
 @mixin keyframes($name) {
@@ -39,8 +39,9 @@ button, a {
     background: rgba(0, 0, 0, .15);
     pointer-events: none;
     @include border-radius(100%);
-    -ms-transform: scale(0);
-    @include transform(0, 0, 0, 0, 0, 0);
+    // -ms-transform: scale(0);
+    // @include transform(0, 0, 0, 0, 0, 0);
+    @include scale(0, 0);
 }
 .ripple.show {
     @include experimental('animation-name', ripple, $animation-support);
@@ -50,8 +51,9 @@ button, a {
 
 @include keyframes(ripple) {
     to {
-        -ms-transform: scale(2);
-        @include transform(2, 0, 0, 0, 0, 0);
+        // -ms-transform: scale(2);
+        // @include transform(2, 0, 0, 0, 0, 0);
+        @include scale(2, 0);
         opacity: 0;
     }
 }
