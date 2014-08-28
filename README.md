@@ -6,6 +6,12 @@ material_design_for_web
 
 Use CSS3 achieve a part of material design
 
+### <strong style="color:red">Notice</strong>
+
+Now scss support [compass 1.0.1](http://compass-style.org/install/)
+
+Modify `transform` in scss
+
 ### Demo
 
 [Demo](http://tedshd.github.io/material_design_for_web/)
