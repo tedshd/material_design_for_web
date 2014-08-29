@@ -61,9 +61,7 @@ $borderD4Width: 1px;
         display: inline-block;
         width: $checkboxWidth;
         height: $checkboxHeight;
-        // background: red;
         margin: 5px;
-        // border: solid 1px green;
         @include border-radius(50%);
         @include box-sizing(border-box);
         // @include simple-transform($scale, $rotate, $trans-x, $trans-y, $skew-x, $skew-y, $origin-x, $origin-y);
@@ -73,9 +71,7 @@ $borderD4Width: 1px;
         @include transition-timing-function(ease);
     }
     input[type='radio']:checked~.check:after {
-        // width: 12px;
-        // border: solid 1px green;
-        background: red;
+        background: green;
         margin: 3px;
         @include border-radius(50%);
         @include simple-transform(.7, 0, 0, 0, 0, 0, 0, 0);

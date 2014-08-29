@@ -58,7 +58,8 @@ $borderD4Width: 1px;
         display: inline-block;
         width: $checkboxWidth;
         height: $checkboxHeight;
-        border: solid 2px #999;
+        border: solid 2px;
+        border-color: #999;
         @include box-sizing(border-box);
         // @include simple-transform($scale, $rotate, $trans-x, $trans-y, $skew-x, $skew-y, $origin-x, $origin-y);
         @include simple-transform(1, 0, 0, 0, 0, 0, 0, 0);
@@ -68,9 +69,9 @@ $borderD4Width: 1px;
     }
     input[type='checkbox']:checked~.check:after {
         width: 12px;
-        border: solid blue;
         border-width: 0 2px 2px 0;
         @include simple-transform(1, 45deg, 5px, -15px, 0, 0, 0, 0);
+        border-color: green;
     }
 
     .ripple {
