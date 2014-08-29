@@ -27,6 +27,7 @@ $animation-support: webkit, moz, o, ms, not khtml;
 
 $checkboxWidth: 20px;
 $checkboxHeight: 20px;
+$borderD4Width: 1px;
 
 .material-design-checkbox {
     position: relative;
@@ -46,12 +47,14 @@ $checkboxHeight: 20px;
         width: $checkboxWidth;
         height: $checkboxHeight;
         display: inline-block;
-        border: solid 1px rgba(0, 0, 0, .1);
+        border: solid $borderD4Width rgba(0, 0, 0, .1);
         @include box-sizing(border-box);
     }
     .check:after {
         content: "";
         position: relative;
+        top: - $borderD4Width;
+        left: - $borderD4Width;
         display: inline-block;
         width: $checkboxWidth;
         height: $checkboxHeight;
@@ -69,25 +72,26 @@ $checkboxHeight: 20px;
         border-width: 0 2px 2px 0;
         @include simple-transform(1, 45deg, 5px, -15px, 0, 0, 0, 0);
     }
-}
 
-.ripple {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: $checkboxWidth;
-    height: $checkboxHeight;
-    background: rgba(0, 0, 0, .15);
-    pointer-events: none;
-    @include border-radius(100%);
-    // -ms-transform: scale(0);
-    // @include transform(0, 0, 0, 0, 0, 0);
-    @include scale(0, 0);
-}
-.ripple.show {
-    @include experimental('animation-name', ripple, $animation-support);
-    @include experimental('animation-duration', .5s, $animation-support);
-    @include experimental('animation-timing-function', ease-out, $animation-support);
+    .ripple {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $checkboxWidth;
+        height: $checkboxHeight;
+        background: rgba(0, 0, 0, .15);
+        pointer-events: none;
+        @include border-radius(100%);
+        // -ms-transform: scale(0);
+        // @include transform(0, 0, 0, 0, 0, 0);
+        @include scale(0, 0);
+    }
+    .ripple.show {
+        @include experimental('animation-name', ripple, $animation-support);
+        @include experimental('animation-duration', .5s, $animation-support);
+        @include experimental('animation-timing-function', ease-out, $animation-support);
+    }
+
 }
 
 @include keyframes(ripple) {
