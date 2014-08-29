@@ -1,0 +1,100 @@
+/**
+ *
+ * @authors Ted Shiu (tedshd@gmail.com)
+ * @date    2014-08-28 21:41:18
+ * @version $Id$
+ */
+
+@import "compass";
+// @import "compass/reset";
+@import "compass/css3";
+
+$animation-support: webkit, moz, o, ms, not khtml;
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+$checkboxWidth: 20px;
+$checkboxHeight: 20px;
+
+.material-design-checkbox {
+    position: relative;
+    * {
+        vertical-align: middle;
+    }
+    input[type='checkbox'] {
+        position: absolute;
+        z-index: 1;
+        opacity: 0;
+        width: $checkboxWidth;
+        height: $checkboxHeight;
+    }
+    .check {
+        position: relative;
+        z-index: 0;
+        width: $checkboxWidth;
+        height: $checkboxHeight;
+        display: inline-block;
+        border: solid 1px rgba(0, 0, 0, .1);
+        @include box-sizing(border-box);
+    }
+    .check:after {
+        content: "";
+        position: relative;
+        display: inline-block;
+        width: $checkboxWidth;
+        height: $checkboxHeight;
+        border: solid 2px #999;
+        @include box-sizing(border-box);
+        // @include simple-transform($scale, $rotate, $trans-x, $trans-y, $skew-x, $skew-y, $origin-x, $origin-y);
+        @include simple-transform(1, 0, 0, 0, 0, 0, 0, 0);
+        @include transition-property(all);
+        @include transition-duration(.5s);
+        @include transition-timing-function(ease);
+    }
+    input[type='checkbox']:checked~.check:after {
+        width: 12px;
+        border: solid blue;
+        border-width: 0 2px 2px 0;
+        @include simple-transform(1, 45deg, 5px, -15px, 0, 0, 0, 0);
+    }
+}
+
+.ripple {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $checkboxWidth;
+    height: $checkboxHeight;
+    background: rgba(0, 0, 0, .15);
+    pointer-events: none;
+    @include border-radius(100%);
+    // -ms-transform: scale(0);
+    // @include transform(0, 0, 0, 0, 0, 0);
+    @include scale(0, 0);
+}
+.ripple.show {
+    @include experimental('animation-name', ripple, $animation-support);
+    @include experimental('animation-duration', .5s, $animation-support);
+    @include experimental('animation-timing-function', ease-out, $animation-support);
+}
+
+@include keyframes(ripple) {
+    to {
+        // -ms-transform: scale(2);
+        // @include transform(2, 0, 0, 0, 0, 0);
+        @include scale(3, 3);
+        opacity: 0;
+    }
+}
