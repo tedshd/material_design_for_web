@@ -1,0 +1,112 @@
+/**
+ *
+ * @authors Ted Shiu (tedshd@gmail.com)
+ * @date    2014-08-29 17:08:08
+ * @version $Id$
+ */
+
+@import "compass";
+// @import "compass/reset";
+@import "compass/css3";
+
+$animation-support: webkit, moz, o, ms, not khtml;
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+$checkboxWidth: 20px;
+$checkboxHeight: 20px;
+$borderD4Width: 1px;
+
+.material-design-radio {
+    position: relative;
+    * {
+        vertical-align: middle;
+    }
+    input[type='radio'] {
+        z-index: 1;
+        position: absolute;
+        margin: 0;
+        opacity: 0;
+        width: $checkboxWidth;
+        height: $checkboxHeight;
+        @include border-radius(50%);
+    }
+    .check {
+        position: relative;
+        display: inline-block;
+        z-index: 0;
+        width: $checkboxWidth;
+        height: $checkboxHeight;
+        border: solid $borderD4Width rgba(0, 0, 0, .1);
+        @include border-radius(50%);
+        @include box-sizing(border-box);
+    }
+    .check:after {
+        content: "";
+        position: relative;
+        top: - $borderD4Width;
+        left: - $borderD4Width;
+        display: inline-block;
+        width: $checkboxWidth;
+        height: $checkboxHeight;
+        // background: red;
+        margin: 5px;
+        // border: solid 1px green;
+        @include border-radius(50%);
+        @include box-sizing(border-box);
+        // @include simple-transform($scale, $rotate, $trans-x, $trans-y, $skew-x, $skew-y, $origin-x, $origin-y);
+        @include simple-transform(.5, 0, 0, 0, 0, 0, 0, 0);
+        @include transition-property(all);
+        @include transition-duration(.5s);
+        @include transition-timing-function(ease);
+    }
+    input[type='radio']:checked~.check:after {
+        // width: 12px;
+        // border: solid 1px green;
+        background: red;
+        margin: 3px;
+        @include border-radius(50%);
+        @include simple-transform(.7, 0, 0, 0, 0, 0, 0, 0);
+    }
+
+    .ripple {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $checkboxWidth;
+        height: $checkboxHeight;
+        background: rgba(0, 0, 0, .15);
+        pointer-events: none;
+        @include border-radius(100%);
+        // -ms-transform: scale(0);
+        // @include transform(0, 0, 0, 0, 0, 0);
+        @include scale(0, 0);
+    }
+    .ripple.show {
+        @include experimental('animation-name', ripple, $animation-support);
+        @include experimental('animation-duration', .5s, $animation-support);
+        @include experimental('animation-timing-function', ease-out, $animation-support);
+    }
+
+}
+
+@include keyframes(ripple) {
+    to {
+        // -ms-transform: scale(2);
+        // @include transform(2, 0, 0, 0, 0, 0);
+        @include scale(3, 3);
+        opacity: 0;
+    }
+}
