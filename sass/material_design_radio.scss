@@ -25,8 +25,8 @@ $animation-support: webkit, moz, o, ms, not khtml;
     }
 }
 
-$checkboxWidth: 20px;
-$checkboxHeight: 20px;
+$radioWidth: 20px;
+$radioHeight: 20px;
 $borderD4Width: 1px;
 
 .material-design-radio {
@@ -39,16 +39,16 @@ $borderD4Width: 1px;
         position: absolute;
         margin: 0;
         opacity: 0;
-        width: $checkboxWidth;
-        height: $checkboxHeight;
+        width: $radioWidth;
+        height: $radioHeight;
         @include border-radius(50%);
     }
     .check {
         position: relative;
         display: inline-block;
         z-index: 0;
-        width: $checkboxWidth;
-        height: $checkboxHeight;
+        width: $radioWidth;
+        height: $radioHeight;
         border: solid $borderD4Width rgba(0, 0, 0, .1);
         @include border-radius(50%);
         @include box-sizing(border-box);
@@ -59,8 +59,8 @@ $borderD4Width: 1px;
         top: - $borderD4Width;
         left: - $borderD4Width;
         display: inline-block;
-        width: $checkboxWidth;
-        height: $checkboxHeight;
+        width: $radioWidth;
+        height: $radioHeight;
         margin: 5px;
         @include border-radius(50%);
         @include box-sizing(border-box);
@@ -81,8 +81,8 @@ $borderD4Width: 1px;
         position: absolute;
         top: 0;
         left: 0;
-        width: $checkboxWidth;
-        height: $checkboxHeight;
+        width: $radioWidth;
+        height: $radioHeight;
         background: rgba(0, 0, 0, .15);
         pointer-events: none;
         @include border-radius(100%);
