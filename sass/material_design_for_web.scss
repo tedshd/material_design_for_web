@@ -1,0 +1,265 @@
+/**
+ *
+ * @authors Ted Shiu (tedshd@gmail.com)
+ * @date    2014-09-01 09:19:43
+ * @version $Id$
+ */
+
+@import "compass";
+// @import "compass/reset";
+@import "compass/css3";
+
+$animation-support: webkit, moz, o, ms, not khtml;
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+/* -- form -- */
+$labelPositionLeft: 10px;
+.material-design-form {
+    input[type="text"], input[type="password"] {
+        z-index: 1;
+        position: relative;
+        top: 0;
+        width: 320px;
+        margin: 30px 0 0 0;
+        padding: $labelPositionLeft;
+        display: block;
+        border-width: 0 0 3px 0;
+        border-color: #ccc;
+        border-style: solid;
+        border-radius: 0;
+        vertical-align: baseline;
+        background: transparent;
+        @include box-sizing(border-box);
+        &:focus {
+            outline: 0;
+            border-color: #129FEA;
+        }
+    }
+
+    .input-group {
+        text-align: left;
+    }
+
+    label {
+        position: relative;
+    }
+
+    .material-design-label {
+        top: -26px;
+        left: $labelPositionLeft;
+        @include scale(1, 1);
+        @include transition-property(all);
+        @include transition-duration(.5s);
+        @include transition-timing-function(ease);
+        display: inline-block;
+    }
+
+    .input-focus {
+        top: -50px;
+        color: #129FEA;
+        @include scale(0.875, 0.875);
+    }
+
+    .input-error {
+        input[type="text"], input[type="password"] {
+            border-color: red;
+        }
+        .material-design-label {
+            color: red;
+        }
+    }
+}
+
+.error-msg {
+    color: red;
+}
+
+/* -- checkbox -- */
+$checkboxWidth: 20px;
+$checkboxHeight: 20px;
+$borderD4Width: 1px;
+
+.material-design-checkbox {
+    position: relative;
+    * {
+        vertical-align: middle;
+    }
+    input[type='checkbox'] {
+        position: absolute;
+        z-index: 1;
+        opacity: 0;
+        width: $checkboxWidth;
+        height: $checkboxHeight;
+    }
+    .check {
+        position: relative;
+        z-index: 0;
+        width: $checkboxWidth;
+        height: $checkboxHeight;
+        display: inline-block;
+        border: solid $borderD4Width rgba(0, 0, 0, .1);
+        @include box-sizing(border-box);
+    }
+    .check:after {
+        content: "";
+        position: relative;
+        top: - $borderD4Width;
+        left: - $borderD4Width;
+        display: inline-block;
+        width: $checkboxWidth;
+        height: $checkboxHeight;
+        border: solid 2px;
+        border-color: #999;
+        @include box-sizing(border-box);
+        @include simple-transform(1, 0, 0, 0, 0, 0, 0, 0);
+        @include transition-property(all);
+        @include transition-duration(.5s);
+        @include transition-timing-function(ease);
+    }
+    input[type='checkbox']:checked~.check:after {
+        width: 12px;
+        border-width: 0 2px 2px 0;
+        @include simple-transform(1, 45deg, 5px, -15px, 0, 0, 0, 0);
+        border-color: green;
+    }
+
+    .ripple {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $checkboxWidth;
+        height: $checkboxHeight;
+        background: rgba(0, 0, 0, .15);
+        pointer-events: none;
+        @include border-radius(100%);
+        @include scale(0, 0);
+    }
+    .ripple.show {
+        @include experimental('animation-name', ripple-large, $animation-support);
+        @include experimental('animation-duration', .5s, $animation-support);
+        @include experimental('animation-timing-function', ease-out, $animation-support);
+    }
+
+}
+
+/* -- radio -- */
+$radioWidth: 20px;
+$radioHeight: 20px;
+$borderD4Width: 1px;
+
+.material-design-radio {
+    position: relative;
+    * {
+        vertical-align: middle;
+    }
+    input[type='radio'] {
+        z-index: 1;
+        position: absolute;
+        margin: 0;
+        opacity: 0;
+        width: $radioWidth;
+        height: $radioHeight;
+        @include border-radius(50%);
+    }
+    .check {
+        position: relative;
+        display: inline-block;
+        z-index: 0;
+        width: $radioWidth;
+        height: $radioHeight;
+        border: solid $borderD4Width rgba(0, 0, 0, .1);
+        @include border-radius(50%);
+        @include box-sizing(border-box);
+    }
+    .check:after {
+        content: "";
+        position: relative;
+        top: - $borderD4Width;
+        left: - $borderD4Width;
+        display: inline-block;
+        width: $radioWidth;
+        height: $radioHeight;
+        margin: 5px;
+        @include border-radius(50%);
+        @include box-sizing(border-box);
+        // @include simple-transform($scale, $rotate, $trans-x, $trans-y, $skew-x, $skew-y, $origin-x, $origin-y);
+        @include simple-transform(.5, 0, 0, 0, 0, 0, 0, 0);
+        @include transition-property(all);
+        @include transition-duration(.5s);
+        @include transition-timing-function(ease);
+    }
+    input[type='radio']:checked~.check:after {
+        background: green;
+        margin: 3px;
+        @include border-radius(50%);
+        @include simple-transform(.7, 0, 0, 0, 0, 0, 0, 0);
+    }
+
+    .ripple {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $radioWidth;
+        height: $radioHeight;
+        background: rgba(0, 0, 0, .15);
+        pointer-events: none;
+        @include border-radius(100%);
+        @include scale(0, 0);
+    }
+    .ripple.show {
+        @include experimental('animation-name', ripple-large, $animation-support);
+        @include experimental('animation-duration', .5s, $animation-support);
+        @include experimental('animation-timing-function', ease-out, $animation-support);
+    }
+
+}
+
+/* -- button -- */
+button, a {
+    position: relative;
+    display: block;
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+    .ripple {
+        position: absolute;
+        background: rgba(0, 0, 0, .15);
+        pointer-events: none;
+        @include border-radius(100%);
+        @include scale(0, 0);
+    }
+    .ripple.show {
+        @include experimental('animation-name', ripple, $animation-support);
+        @include experimental('animation-duration', .75s, $animation-support);
+        @include experimental('animation-timing-function', ease-out, $animation-support);
+    }
+}
+
+
+
+@include keyframes(ripple) {
+    to {
+        @include scale(2, 2);
+        opacity: 0;
+    }
+}
+
+@include keyframes(ripple-large) {
+    to {
+        @include scale(3, 3);
+        opacity: 0;
+    }
+}
