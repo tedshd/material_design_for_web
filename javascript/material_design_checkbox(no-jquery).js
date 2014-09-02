@@ -48,9 +48,9 @@
     };
 
     document.querySelector('body').addDelegateListener('click', '.material-design-checkbox input[type="checkbox"]', function(e){
-        addClass(e.target.nextElementSibling, 'show');
+        addClass(e.target.nextElementSibling.firstElementChild, 'show');
         setTimeout(function() {
-            removeClass(e.target.nextElementSibling, 'show');
+            removeClass(e.target.nextElementSibling.firstElementChild, 'show');
         }, 300);
     });
 

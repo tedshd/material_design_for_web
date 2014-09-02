@@ -48,9 +48,9 @@
     };
 
     document.querySelector('body').addDelegateListener('click', '.material-design-radio input[type="radio"]', function(e){
-        addClass(e.target.nextElementSibling, 'show');
+        addClass(e.target.nextElementSibling.firstElementChild, 'show');
         setTimeout(function() {
-            removeClass(e.target.nextElementSibling, 'show');
+            removeClass(e.target.nextElementSibling.firstElementChild, 'show');
         }, 300);
     });
 
