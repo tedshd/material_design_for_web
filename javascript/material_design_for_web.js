@@ -64,17 +64,26 @@
 
     // checkbox
     document.querySelector('body').addDelegateListener('click', '.material-design-checkbox input[type="checkbox"]', function(e){
-        addClass(e.target.nextElementSibling, 'show');
+        addClass(e.target.nextElementSibling.firstElementChild, 'show');
         setTimeout(function() {
-            removeClass(e.target.nextElementSibling, 'show');
+            removeClass(e.target.nextElementSibling.firstElementChild, 'show');
         }, 300);
     });
 
     // radio
     document.querySelector('body').addDelegateListener('click', '.material-design-radio input[type="radio"]', function(e){
-        addClass(e.target.nextElementSibling, 'show');
+        addClass(e.target.nextElementSibling.firstElementChild, 'show');
         setTimeout(function() {
-            removeClass(e.target.nextElementSibling, 'show');
+            removeClass(e.target.nextElementSibling.firstElementChild, 'show');
+        }, 300);
+    });
+
+    // switch
+    document.querySelector('body').addDelegateListener('click', '.material-design-switch input[type="checkbox"]', function(e){
+        console.log(e);
+        addClass(e.target.nextElementSibling.firstElementChild, 'show');
+        setTimeout(function() {
+            removeClass(e.target.nextElementSibling.firstElementChild, 'show');
         }, 300);
     });
 

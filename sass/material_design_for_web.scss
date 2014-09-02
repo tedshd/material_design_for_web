@@ -231,8 +231,8 @@ $borderD4Width: 1px;
 
     .ripple {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: - $borderD4Width;
+        left: - $borderD4Width;
         width: $radioWidth;
         height: $radioHeight;
         background: rgba(0, 0, 0, .15);
@@ -246,6 +246,98 @@ $borderD4Width: 1px;
         @include experimental('animation-timing-function', ease-out, $animation-support);
     }
 
+}
+
+/* -- switch -- */
+$switchWidth: 40px;
+$switchHeight: 20px;
+$switchD4Color: #999;
+$switchCheckedColor: green;
+
+
+.material-design-switch {
+    position: relative;
+    * {
+        vertical-align: middle;
+    }
+    input[type='checkbox'] {
+        position: absolute;
+        z-index: 1;
+        margin: 0;
+        opacity: 0;
+        width: $switchWidth;
+        height: $switchHeight;
+        cursor: pointer;
+    }
+    input[type='checkbox'][disabled] {
+        cursor: not-allowed;
+    }
+    input[type='checkbox'][disabled]~.check {
+        background: #ddd;
+        &:after {
+            border-color: #ddd;
+            background: #ddd;
+        }
+    }
+    .check {
+        position: relative;
+        top: 50%;
+        z-index: 0;
+        width: $switchWidth;
+        height: 2px;
+        display: inline-block;
+        background: $switchD4Color;
+        // border: solid $borderD4Width rgba(0, 0, 0, .1);
+        @include box-sizing(border-box);
+    }
+    .check:after {
+        content: "";
+        position: absolute;
+        top: - (($switchHeight - 2)/2);
+        left: 0;
+        display: inline-block;
+        width: $switchHeight;
+        height: $switchHeight;
+        border: solid 2px;
+        border-color: $switchD4Color;
+        background: $switchD4Color;
+        @include border-radius(50%);
+        @include box-sizing(border-box);
+        // @include simple-transform($scale, $rotate, $trans-x, $trans-y, $skew-x, $skew-y, $origin-x, $origin-y);
+        @include simple-transform(1, 0, 0, 0, 0, 0, 0, 0);
+        @include transition-property(all);
+        @include transition-duration(.5s);
+        @include transition-timing-function(ease);
+    }
+    input[type='checkbox']:checked~.check {
+        background: $switchCheckedColor;
+        &:after {
+            left: $switchWidth - $switchHeight;
+            border-color: $switchCheckedColor;
+            background: $switchCheckedColor;
+        }
+        .ripple {
+            left: - ($switchHeight/2);
+        }
+    }
+    .ripple {
+        position: absolute;
+        top: - ($switchHeight/2);
+        left: $switchWidth - ($switchHeight/2);
+        width: $switchHeight;
+        height: $switchHeight;
+        background: rgba(0, 0, 0, .15);
+        pointer-events: none;
+        @include border-radius(100%);
+        // -ms-transform: scale(0);
+        // @include transform(0, 0, 0, 0, 0, 0);
+        @include scale(0, 0);
+    }
+    .ripple.show {
+        @include experimental('animation-name', ripple-large, $animation-support);
+        @include experimental('animation-duration', .5s, $animation-support);
+        @include experimental('animation-timing-function', ease-out, $animation-support);
+    }
 }
 
 /* -- button -- */

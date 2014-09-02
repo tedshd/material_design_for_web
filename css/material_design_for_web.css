@@ -318,8 +318,8 @@ input[type='radio'][disabled] ~ .check {
 /* line 232, ../sass/material_design_for_web.scss */
 .material-design-radio .ripple {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -1px;
+  left: -1px;
   width: 20px;
   height: 20px;
   background: rgba(0, 0, 0, 0.15);
@@ -351,8 +351,142 @@ input[type='radio'][disabled] ~ .check {
   animation-timing-function: ease-out;
 }
 
+/* -- switch -- */
+/* line 258, ../sass/material_design_for_web.scss */
+.material-design-switch {
+  position: relative;
+}
+/* line 260, ../sass/material_design_for_web.scss */
+.material-design-switch * {
+  vertical-align: middle;
+}
+/* line 263, ../sass/material_design_for_web.scss */
+.material-design-switch input[type='checkbox'] {
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+  opacity: 0;
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+}
+/* line 272, ../sass/material_design_for_web.scss */
+.material-design-switch input[type='checkbox'][disabled] {
+  cursor: not-allowed;
+}
+/* line 275, ../sass/material_design_for_web.scss */
+.material-design-switch input[type='checkbox'][disabled] ~ .check {
+  background: #ddd;
+}
+/* line 277, ../sass/material_design_for_web.scss */
+.material-design-switch input[type='checkbox'][disabled] ~ .check:after {
+  border-color: #ddd;
+  background: #ddd;
+}
+/* line 282, ../sass/material_design_for_web.scss */
+.material-design-switch .check {
+  position: relative;
+  top: 50%;
+  z-index: 0;
+  width: 40px;
+  height: 2px;
+  display: inline-block;
+  background: #999;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 293, ../sass/material_design_for_web.scss */
+.material-design-switch .check:after {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: solid 2px;
+  border-color: #999;
+  background: #999;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-transform:  scale(1, 1) rotateZ(0) translate(0, 0) skew(0, 0);
+  -ms-transform:  scale(1, 1) rotateZ(0) translate(0, 0) skew(0, 0);
+  -webkit-transform:  scale(1, 1) rotateZ(0) translate(0, 0) skew(0, 0);
+  transform:  scale(1, 1) rotateZ(0) translate(0, 0) skew(0, 0);
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+/* line 312, ../sass/material_design_for_web.scss */
+.material-design-switch input[type='checkbox']:checked ~ .check {
+  background: green;
+}
+/* line 314, ../sass/material_design_for_web.scss */
+.material-design-switch input[type='checkbox']:checked ~ .check:after {
+  left: 20px;
+  border-color: green;
+  background: green;
+}
+/* line 319, ../sass/material_design_for_web.scss */
+.material-design-switch input[type='checkbox']:checked ~ .check .ripple {
+  left: -10px;
+}
+/* line 323, ../sass/material_design_for_web.scss */
+.material-design-switch .ripple {
+  position: absolute;
+  top: -10px;
+  left: 30px;
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  -moz-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  -webkit-transform: scale(0, 0);
+  transform: scale(0, 0);
+}
+/* line 336, ../sass/material_design_for_web.scss */
+.material-design-switch .ripple.show {
+  -webkit-animation-name: ripple-large;
+  -moz-animation-name: ripple-large;
+  -ms-animation-name: ripple-large;
+  -o-animation-name: ripple-large;
+  animation-name: ripple-large;
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  -ms-animation-duration: 0.5s;
+  -o-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -ms-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+
 /* -- button -- */
-/* line 252, ../sass/material_design_for_web.scss */
+/* line 344, ../sass/material_design_for_web.scss */
 button, a {
   position: relative;
   display: block;
@@ -360,7 +494,7 @@ button, a {
   cursor: pointer;
   overflow: hidden;
 }
-/* line 258, ../sass/material_design_for_web.scss */
+/* line 350, ../sass/material_design_for_web.scss */
 button .ripple, a .ripple {
   position: absolute;
   background: rgba(0, 0, 0, 0.15);
@@ -373,7 +507,7 @@ button .ripple, a .ripple {
   -webkit-transform: scale(0, 0);
   transform: scale(0, 0);
 }
-/* line 265, ../sass/material_design_for_web.scss */
+/* line 357, ../sass/material_design_for_web.scss */
 button .ripple.show, a .ripple.show {
   -webkit-animation-name: ripple;
   -moz-animation-name: ripple;
