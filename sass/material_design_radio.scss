@@ -85,8 +85,8 @@ $borderD4Width: 1px;
 
     .ripple {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: - $borderD4Width;
+        left: - $borderD4Width;
         width: $radioWidth;
         height: $radioHeight;
         background: rgba(0, 0, 0, .15);
