@@ -28,15 +28,24 @@
   outline: 0;
   border-color: #129FEA;
 }
-/* line 36, ../sass/material_design_form.scss */
+/* line 35, ../sass/material_design_form.scss */
+.material-design-form input[type="text"][disabled], .material-design-form input[type="password"][disabled] {
+  cursor: not-allowed;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+/* line 39, ../sass/material_design_form.scss */
+.material-design-form input[type="text"][disabled] ~ .material-design-label, .material-design-form input[type="password"][disabled] ~ .material-design-label {
+  color: rgba(0, 0, 0, 0.2);
+}
+/* line 43, ../sass/material_design_form.scss */
 .material-design-form .input-group {
   text-align: left;
 }
-/* line 40, ../sass/material_design_form.scss */
+/* line 47, ../sass/material_design_form.scss */
 .material-design-form label {
   position: relative;
 }
-/* line 44, ../sass/material_design_form.scss */
+/* line 51, ../sass/material_design_form.scss */
 .material-design-form .material-design-label {
   top: -26px;
   left: 10px;
@@ -58,7 +67,7 @@
   transition-timing-function: ease;
   display: inline-block;
 }
-/* line 56, ../sass/material_design_form.scss */
+/* line 63, ../sass/material_design_form.scss */
 .material-design-form .input-focus {
   top: -50px;
   color: #129FEA;
@@ -67,16 +76,16 @@
   -webkit-transform: scale(0.875, 0.875);
   transform: scale(0.875, 0.875);
 }
-/* line 65, ../sass/material_design_form.scss */
+/* line 72, ../sass/material_design_form.scss */
 .material-design-form .input-error input[type="text"], .material-design-form .input-error input[type="password"] {
   border-color: red;
 }
-/* line 68, ../sass/material_design_form.scss */
+/* line 75, ../sass/material_design_form.scss */
 .material-design-form .input-error .material-design-label {
   color: red;
 }
 
-/* line 74, ../sass/material_design_form.scss */
+/* line 81, ../sass/material_design_form.scss */
 .error-msg {
   color: red;
 }

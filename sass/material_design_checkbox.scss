@@ -41,6 +41,12 @@ $borderD4Width: 1px;
         width: $checkboxWidth;
         height: $checkboxHeight;
     }
+    input[type='checkbox'][disabled] {
+        cursor: not-allowed;
+    }
+    input[type='checkbox'][disabled]~.check:after {
+        border-color: transparent;
+    }
     .check {
         position: relative;
         z-index: 0;

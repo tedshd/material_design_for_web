@@ -13,7 +13,12 @@ button, a {
   overflow: hidden;
 }
 
-/* line 37, ../sass/material_design_button.scss */
+/* line 36, ../sass/material_design_button.scss */
+button[disabled] {
+  cursor: not-allowed;
+}
+
+/* line 40, ../sass/material_design_button.scss */
 .ripple {
   position: absolute;
   background: rgba(0, 0, 0, 0.15);
@@ -27,7 +32,7 @@ button, a {
   transform: scale(0, 0);
 }
 
-/* line 46, ../sass/material_design_button.scss */
+/* line 49, ../sass/material_design_button.scss */
 .ripple.show {
   -webkit-animation-name: ripple;
   -moz-animation-name: ripple;

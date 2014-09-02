@@ -21,6 +21,14 @@
   height: 20px;
 }
 /* line 44, ../sass/material_design_checkbox.scss */
+.material-design-checkbox input[type='checkbox'][disabled] {
+  cursor: not-allowed;
+}
+/* line 47, ../sass/material_design_checkbox.scss */
+.material-design-checkbox input[type='checkbox'][disabled] ~ .check:after {
+  border-color: transparent;
+}
+/* line 50, ../sass/material_design_checkbox.scss */
 .material-design-checkbox .check {
   position: relative;
   z-index: 0;
@@ -32,7 +40,7 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 53, ../sass/material_design_checkbox.scss */
+/* line 59, ../sass/material_design_checkbox.scss */
 .material-design-checkbox .check:after {
   content: "";
   position: relative;
@@ -67,7 +75,7 @@
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
 }
-/* line 70, ../sass/material_design_checkbox.scss */
+/* line 76, ../sass/material_design_checkbox.scss */
 .material-design-checkbox input[type='checkbox']:checked ~ .check:after {
   width: 12px;
   border-width: 0 2px 2px 0;
@@ -81,7 +89,7 @@
   transform-origin: 0 0;
   border-color: green;
 }
-/* line 77, ../sass/material_design_checkbox.scss */
+/* line 83, ../sass/material_design_checkbox.scss */
 .material-design-checkbox .ripple {
   position: absolute;
   top: 0;
@@ -98,7 +106,7 @@
   -webkit-transform: scale(0, 0);
   transform: scale(0, 0);
 }
-/* line 90, ../sass/material_design_checkbox.scss */
+/* line 96, ../sass/material_design_checkbox.scss */
 .material-design-checkbox .ripple.show {
   -webkit-animation-name: ripple;
   -moz-animation-name: ripple;

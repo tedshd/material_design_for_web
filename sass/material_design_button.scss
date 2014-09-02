@@ -33,6 +33,9 @@ button, a {
   cursor: pointer;
   overflow: hidden;
 }
+button[disabled] {
+    cursor: not-allowed;
+}
 
 .ripple {
     position: absolute;

@@ -43,13 +43,19 @@ $borderD4Width: 1px;
         height: $radioHeight;
         @include border-radius(50%);
     }
+    input[type='radio'][disabled] {
+        cursor: not-allowed;
+    }
+    input[type='radio'][disabled]~.check {
+        border-color: rgba(0, 0, 0, .1);
+    }
     .check {
         position: relative;
         display: inline-block;
         z-index: 0;
         width: $radioWidth;
         height: $radioHeight;
-        border: solid $borderD4Width rgba(0, 0, 0, .1);
+        border: solid $borderD4Width rgba(0, 0, 0, .2);
         @include border-radius(50%);
         @include box-sizing(border-box);
     }

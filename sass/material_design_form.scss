@@ -32,6 +32,13 @@ $labelPositionLeft: 10px;
             border-color: #129FEA;
         }
     }
+    input[type="text"][disabled], input[type="password"][disabled] {
+        cursor: not-allowed;
+        border-color: rgba(0, 0, 0, .2);
+    }
+    input[type="text"][disabled]~.material-design-label, input[type="password"][disabled]~.material-design-label {
+        color: rgba(0, 0, 0, .2);
+    }
 
     .input-group {
         text-align: left;
