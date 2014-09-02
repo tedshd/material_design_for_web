@@ -1,0 +1,126 @@
+/**
+ *
+ * @authors Ted Shiu (tedshd@gmail.com)
+ * @date    2014-09-02 13:41:47
+ * @version $Id$
+ */
+
+@import "compass";
+// @import "compass/reset";
+@import "compass/css3";
+
+$animation-support: webkit, moz, o, ms, not khtml;
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+$switchWidth: 40px;
+$switchHeight: 20px;
+$switchD4Color: #999;
+$switchCheckedColor: green;
+
+
+.material-design-switch {
+    position: relative;
+    * {
+        vertical-align: middle;
+    }
+    input[type='checkbox'] {
+        position: absolute;
+        z-index: 1;
+        margin: 0;
+        opacity: 0;
+        width: $switchWidth;
+        height: $switchHeight;
+        cursor: pointer;
+    }
+    input[type='checkbox'][disabled] {
+        cursor: not-allowed;
+    }
+    input[type='checkbox'][disabled]~.check {
+        background: #ddd;
+        &:after {
+            border-color: #ddd;
+            background: #ddd;
+        }
+    }
+    .check {
+        position: relative;
+        top: 50%;
+        z-index: 0;
+        width: $switchWidth;
+        height: 2px;
+        display: inline-block;
+        background: $switchD4Color;
+        // border: solid $borderD4Width rgba(0, 0, 0, .1);
+        @include box-sizing(border-box);
+    }
+    .check:after {
+        content: "";
+        position: absolute;
+        top: - (($switchHeight - 2)/2);
+        left: 0;
+        display: inline-block;
+        width: $switchHeight;
+        height: $switchHeight;
+        border: solid 2px;
+        border-color: $switchD4Color;
+        background: $switchD4Color;
+        @include border-radius(50%);
+        @include box-sizing(border-box);
+        // @include simple-transform($scale, $rotate, $trans-x, $trans-y, $skew-x, $skew-y, $origin-x, $origin-y);
+        @include simple-transform(1, 0, 0, 0, 0, 0, 0, 0);
+        @include transition-property(all);
+        @include transition-duration(.5s);
+        @include transition-timing-function(ease);
+    }
+    input[type='checkbox']:checked~.check {
+        background: $switchCheckedColor;
+        &:after {
+            left: $switchWidth - $switchHeight;
+            border-color: $switchCheckedColor;
+            background: $switchCheckedColor;
+        }
+        .ripple {
+            left: - ($switchHeight/2);
+        }
+    }
+    .ripple {
+        position: absolute;
+        top: - ($switchHeight/2);
+        left: $switchWidth - ($switchHeight/2);
+        width: $switchHeight;
+        height: $switchHeight;
+        background: rgba(0, 0, 0, .15);
+        pointer-events: none;
+        @include border-radius(100%);
+        // -ms-transform: scale(0);
+        // @include transform(0, 0, 0, 0, 0, 0);
+        @include scale(0, 0);
+    }
+    .ripple.show {
+        @include experimental('animation-name', ripple, $animation-support);
+        @include experimental('animation-duration', .5s, $animation-support);
+        @include experimental('animation-timing-function', ease-out, $animation-support);
+    }
+}
+
+@include keyframes(ripple) {
+    to {
+        // -ms-transform: scale(2);
+        // @include transform(2, 0, 0, 0, 0, 0);
+        @include scale(3, 3);
+        opacity: 0;
+    }
+}

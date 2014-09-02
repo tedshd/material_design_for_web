@@ -1,0 +1,175 @@
+/**
+ *
+ * @authors Ted Shiu (tedshd@gmail.com)
+ * @date    2014-09-02 13:41:47
+ * @version $Id$
+ */
+/* line 34, ../sass/material_design_switch.scss */
+.material-design-switch {
+  position: relative;
+}
+/* line 36, ../sass/material_design_switch.scss */
+.material-design-switch * {
+  vertical-align: middle;
+}
+/* line 39, ../sass/material_design_switch.scss */
+.material-design-switch input[type='checkbox'] {
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+  opacity: 0;
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+}
+/* line 48, ../sass/material_design_switch.scss */
+.material-design-switch input[type='checkbox'][disabled] {
+  cursor: not-allowed;
+}
+/* line 51, ../sass/material_design_switch.scss */
+.material-design-switch input[type='checkbox'][disabled] ~ .check {
+  background: #ddd;
+}
+/* line 53, ../sass/material_design_switch.scss */
+.material-design-switch input[type='checkbox'][disabled] ~ .check:after {
+  border-color: #ddd;
+  background: #ddd;
+}
+/* line 58, ../sass/material_design_switch.scss */
+.material-design-switch .check {
+  position: relative;
+  top: 50%;
+  z-index: 0;
+  width: 40px;
+  height: 2px;
+  display: inline-block;
+  background: #999;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 69, ../sass/material_design_switch.scss */
+.material-design-switch .check:after {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: solid 2px;
+  border-color: #999;
+  background: #999;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-transform:  scale(1, 1) rotateZ(0) translate(0, 0) skew(0, 0);
+  -ms-transform:  scale(1, 1) rotateZ(0) translate(0, 0) skew(0, 0);
+  -webkit-transform:  scale(1, 1) rotateZ(0) translate(0, 0) skew(0, 0);
+  transform:  scale(1, 1) rotateZ(0) translate(0, 0) skew(0, 0);
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+/* line 88, ../sass/material_design_switch.scss */
+.material-design-switch input[type='checkbox']:checked ~ .check {
+  background: green;
+}
+/* line 90, ../sass/material_design_switch.scss */
+.material-design-switch input[type='checkbox']:checked ~ .check:after {
+  left: 20px;
+  border-color: green;
+  background: green;
+}
+/* line 95, ../sass/material_design_switch.scss */
+.material-design-switch input[type='checkbox']:checked ~ .check .ripple {
+  left: -10px;
+}
+/* line 99, ../sass/material_design_switch.scss */
+.material-design-switch .ripple {
+  position: absolute;
+  top: -10px;
+  left: 30px;
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  -moz-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  -webkit-transform: scale(0, 0);
+  transform: scale(0, 0);
+}
+/* line 112, ../sass/material_design_switch.scss */
+.material-design-switch .ripple.show {
+  -webkit-animation-name: ripple;
+  -moz-animation-name: ripple;
+  -ms-animation-name: ripple;
+  -o-animation-name: ripple;
+  animation-name: ripple;
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  -ms-animation-duration: 0.5s;
+  -o-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-timing-function: ease-out;
+  -ms-animation-timing-function: ease-out;
+  -o-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes ripple {
+  to {
+    -moz-transform: scale(3, 3);
+    -ms-transform: scale(3, 3);
+    -webkit-transform: scale(3, 3);
+    transform: scale(3, 3);
+    opacity: 0;
+  }
+}
+@-moz-keyframes ripple {
+  to {
+    -moz-transform: scale(3, 3);
+    -ms-transform: scale(3, 3);
+    -webkit-transform: scale(3, 3);
+    transform: scale(3, 3);
+    opacity: 0;
+  }
+}
+@-ms-keyframes ripple {
+  to {
+    -moz-transform: scale(3, 3);
+    -ms-transform: scale(3, 3);
+    -webkit-transform: scale(3, 3);
+    transform: scale(3, 3);
+    opacity: 0;
+  }
+}
+@keyframes ripple {
+  to {
+    -moz-transform: scale(3, 3);
+    -ms-transform: scale(3, 3);
+    -webkit-transform: scale(3, 3);
+    transform: scale(3, 3);
+    opacity: 0;
+  }
+}
