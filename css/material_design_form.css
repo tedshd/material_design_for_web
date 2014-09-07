@@ -5,7 +5,7 @@
  * @version $Id$
  */
 /* line 15, ../sass/material_design_form.scss */
-.material-design-form input[type="text"], .material-design-form input[type="password"] {
+.material-design-form input[type="text"], .material-design-form input[type="password"], .material-design-form textarea {
   z-index: 1;
   position: relative;
   top: 0;
@@ -24,7 +24,7 @@
   box-sizing: border-box;
 }
 /* line 30, ../sass/material_design_form.scss */
-.material-design-form input[type="text"]:focus, .material-design-form input[type="password"]:focus {
+.material-design-form input[type="text"]:focus, .material-design-form input[type="password"]:focus, .material-design-form textarea:focus {
   outline: 0;
   border-color: #129FEA;
 }
@@ -38,14 +38,15 @@
   color: rgba(0, 0, 0, 0.2);
 }
 /* line 43, ../sass/material_design_form.scss */
-.material-design-form .input-group {
+.material-design-form .material-input-group {
+  position: relative;
   text-align: left;
 }
-/* line 47, ../sass/material_design_form.scss */
+/* line 48, ../sass/material_design_form.scss */
 .material-design-form label {
   position: relative;
 }
-/* line 51, ../sass/material_design_form.scss */
+/* line 52, ../sass/material_design_form.scss */
 .material-design-form .material-design-label {
   top: -26px;
   left: 10px;
@@ -67,7 +68,15 @@
   transition-timing-function: ease;
   display: inline-block;
 }
-/* line 63, ../sass/material_design_form.scss */
+/* line 64, ../sass/material_design_form.scss */
+.material-design-form textarea + label {
+  position: absolute;
+}
+/* line 67, ../sass/material_design_form.scss */
+.material-design-form textarea + .material-design-label {
+  top: 0;
+}
+/* line 71, ../sass/material_design_form.scss */
 .material-design-form .input-focus {
   top: -50px;
   color: #129FEA;
@@ -76,16 +85,20 @@
   -webkit-transform: scale(0.875, 0.875);
   transform: scale(0.875, 0.875);
 }
-/* line 72, ../sass/material_design_form.scss */
+/* line 79, ../sass/material_design_form.scss */
+.material-design-form textarea + .input-focus {
+  top: -26px;
+}
+/* line 84, ../sass/material_design_form.scss */
 .material-design-form .input-error input[type="text"], .material-design-form .input-error input[type="password"] {
   border-color: red;
 }
-/* line 75, ../sass/material_design_form.scss */
+/* line 87, ../sass/material_design_form.scss */
 .material-design-form .input-error .material-design-label {
   color: red;
 }
 
-/* line 81, ../sass/material_design_form.scss */
+/* line 93, ../sass/material_design_form.scss */
 .error-msg {
   color: red;
 }

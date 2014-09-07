@@ -12,7 +12,7 @@
 
 $labelPositionLeft: 10px;
 .material-design-form {
-    input[type="text"], input[type="password"] {
+    input[type="text"], input[type="password"], textarea {
         z-index: 1;
         position: relative;
         top: 0;
@@ -40,7 +40,8 @@ $labelPositionLeft: 10px;
         color: rgba(0, 0, 0, .2);
     }
 
-    .input-group {
+    .material-input-group {
+        position: relative;
         text-align: left;
     }
 
@@ -60,12 +61,23 @@ $labelPositionLeft: 10px;
         display: inline-block;
     }
 
+    textarea+label {
+        position: absolute;
+    }
+    textarea+.material-design-label {
+        top: 0;
+    }
+
     .input-focus {
         top: -50px;
         color: #129FEA;
         // -ms-transform: scale(0.875);
         // @include transform(0.875, 0, 0, 0, 0, 0);
         @include scale(0.875, 0.875);
+    }
+
+    textarea+.input-focus {
+        top: -26px;
     }
 
     .input-error {

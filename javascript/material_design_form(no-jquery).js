@@ -26,14 +26,28 @@
         }
     }
 
-    for (var i = document.querySelectorAll('.material-design-form input').length - 1; i >= 0; i--) {
-        document.querySelectorAll('.material-design-form input[type="text"]')[i].addEventListener('focus', function(e) {
+    for (var i = document.querySelectorAll('.material-input-group input').length - 1; i >= 0; i--) {
+        document.querySelectorAll('.material-input-group input')[i].addEventListener('focus', function(e) {
             addClass(e.target.nextElementSibling, 'input-focus');
         });
     }
 
-    for (var i = document.querySelectorAll('.material-design-form input').length - 1; i >= 0; i--) {
-        document.querySelectorAll('.material-design-form input[type="text"]')[i].addEventListener('blur', function(e) {
+    for (var i = document.querySelectorAll('.material-input-group input').length - 1; i >= 0; i--) {
+        document.querySelectorAll('.material-input-group input')[i].addEventListener('blur', function(e) {
+            if (0 >= e.target.value.length) {
+                removeClass(e.target.nextElementSibling, 'input-focus');
+            }
+        });
+    }
+
+    for (var i = document.querySelectorAll('.material-input-group textarea').length - 1; i >= 0; i--) {
+        document.querySelectorAll('.material-input-group textarea')[i].addEventListener('focus', function(e) {
+            addClass(e.target.nextElementSibling, 'input-focus');
+        });
+    }
+
+    for (var i = document.querySelectorAll('.material-input-group textarea').length - 1; i >= 0; i--) {
+        document.querySelectorAll('.material-input-group textarea')[i].addEventListener('blur', function(e) {
             if (0 >= e.target.value.length) {
                 removeClass(e.target.nextElementSibling, 'input-focus');
             }

@@ -49,7 +49,7 @@ input[type='radio'][disabled]~.check {
 /* -- form -- */
 $labelPositionLeft: 10px;
 .material-design-form {
-    input[type="text"], input[type="password"] {
+    input[type="text"], input[type="password"], textarea {
         z-index: 1;
         position: relative;
         top: 0;
@@ -70,12 +70,21 @@ $labelPositionLeft: 10px;
         }
     }
 
-    .input-group {
+    .material-input-group {
+        position: relative;
         text-align: left;
     }
 
     label {
         position: relative;
+    }
+
+    textarea+label {
+        position: absolute;
+    }
+
+    textarea+.material-design-label {
+        top: 0;
     }
 
     .material-design-label {
@@ -86,6 +95,10 @@ $labelPositionLeft: 10px;
         @include transition-duration(.5s);
         @include transition-timing-function(ease);
         display: inline-block;
+    }
+
+    textarea+.input-focus {
+        top: -26px;
     }
 
     .input-focus {

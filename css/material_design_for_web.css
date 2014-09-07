@@ -36,7 +36,7 @@ input[type='radio'][disabled] ~ .check {
 
 /* -- form -- */
 /* line 52, ../sass/material_design_for_web.scss */
-.material-design-form input[type="text"], .material-design-form input[type="password"] {
+.material-design-form input[type="text"], .material-design-form input[type="password"], .material-design-form textarea {
   z-index: 1;
   position: relative;
   top: 0;
@@ -55,19 +55,28 @@ input[type='radio'][disabled] ~ .check {
   box-sizing: border-box;
 }
 /* line 67, ../sass/material_design_for_web.scss */
-.material-design-form input[type="text"]:focus, .material-design-form input[type="password"]:focus {
+.material-design-form input[type="text"]:focus, .material-design-form input[type="password"]:focus, .material-design-form textarea:focus {
   outline: 0;
   border-color: #129FEA;
 }
 /* line 73, ../sass/material_design_for_web.scss */
-.material-design-form .input-group {
+.material-design-form .material-input-group {
+  position: relative;
   text-align: left;
 }
-/* line 77, ../sass/material_design_for_web.scss */
+/* line 78, ../sass/material_design_for_web.scss */
 .material-design-form label {
   position: relative;
 }
-/* line 81, ../sass/material_design_for_web.scss */
+/* line 82, ../sass/material_design_for_web.scss */
+.material-design-form textarea + label {
+  position: absolute;
+}
+/* line 86, ../sass/material_design_for_web.scss */
+.material-design-form textarea + .material-design-label {
+  top: 0;
+}
+/* line 90, ../sass/material_design_for_web.scss */
 .material-design-form .material-design-label {
   top: -26px;
   left: 10px;
@@ -89,7 +98,11 @@ input[type='radio'][disabled] ~ .check {
   transition-timing-function: ease;
   display: inline-block;
 }
-/* line 91, ../sass/material_design_for_web.scss */
+/* line 100, ../sass/material_design_for_web.scss */
+.material-design-form textarea + .input-focus {
+  top: -26px;
+}
+/* line 104, ../sass/material_design_for_web.scss */
 .material-design-form .input-focus {
   top: -50px;
   color: #129FEA;
@@ -98,30 +111,30 @@ input[type='radio'][disabled] ~ .check {
   -webkit-transform: scale(0.875, 0.875);
   transform: scale(0.875, 0.875);
 }
-/* line 98, ../sass/material_design_for_web.scss */
+/* line 111, ../sass/material_design_for_web.scss */
 .material-design-form .input-error input[type="text"], .material-design-form .input-error input[type="password"] {
   border-color: red;
 }
-/* line 101, ../sass/material_design_for_web.scss */
+/* line 114, ../sass/material_design_for_web.scss */
 .material-design-form .input-error .material-design-label {
   color: red;
 }
 
-/* line 107, ../sass/material_design_for_web.scss */
+/* line 120, ../sass/material_design_for_web.scss */
 .error-msg {
   color: red;
 }
 
 /* -- checkbox -- */
-/* line 116, ../sass/material_design_for_web.scss */
+/* line 129, ../sass/material_design_for_web.scss */
 .material-design-checkbox {
   position: relative;
 }
-/* line 118, ../sass/material_design_for_web.scss */
+/* line 131, ../sass/material_design_for_web.scss */
 .material-design-checkbox * {
   vertical-align: middle;
 }
-/* line 121, ../sass/material_design_for_web.scss */
+/* line 134, ../sass/material_design_for_web.scss */
 .material-design-checkbox input[type='checkbox'] {
   position: absolute;
   z-index: 1;
@@ -129,7 +142,7 @@ input[type='radio'][disabled] ~ .check {
   width: 20px;
   height: 20px;
 }
-/* line 128, ../sass/material_design_for_web.scss */
+/* line 141, ../sass/material_design_for_web.scss */
 .material-design-checkbox .check {
   position: relative;
   z-index: 0;
@@ -141,7 +154,7 @@ input[type='radio'][disabled] ~ .check {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 137, ../sass/material_design_for_web.scss */
+/* line 150, ../sass/material_design_for_web.scss */
 .material-design-checkbox .check:after {
   content: "";
   position: relative;
@@ -176,7 +189,7 @@ input[type='radio'][disabled] ~ .check {
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
 }
-/* line 153, ../sass/material_design_for_web.scss */
+/* line 166, ../sass/material_design_for_web.scss */
 .material-design-checkbox input[type='checkbox']:checked ~ .check:after {
   width: 12px;
   border-width: 0 2px 2px 0;
@@ -190,7 +203,7 @@ input[type='radio'][disabled] ~ .check {
   transform-origin: 0 0;
   border-color: green;
 }
-/* line 160, ../sass/material_design_for_web.scss */
+/* line 173, ../sass/material_design_for_web.scss */
 .material-design-checkbox .ripple {
   position: absolute;
   top: 0;
@@ -207,7 +220,7 @@ input[type='radio'][disabled] ~ .check {
   -webkit-transform: scale(0, 0);
   transform: scale(0, 0);
 }
-/* line 171, ../sass/material_design_for_web.scss */
+/* line 184, ../sass/material_design_for_web.scss */
 .material-design-checkbox .ripple.show {
   -webkit-animation-name: ripple-large;
   -moz-animation-name: ripple-large;
@@ -227,15 +240,15 @@ input[type='radio'][disabled] ~ .check {
 }
 
 /* -- radio -- */
-/* line 184, ../sass/material_design_for_web.scss */
+/* line 197, ../sass/material_design_for_web.scss */
 .material-design-radio {
   position: relative;
 }
-/* line 186, ../sass/material_design_for_web.scss */
+/* line 199, ../sass/material_design_for_web.scss */
 .material-design-radio * {
   vertical-align: middle;
 }
-/* line 189, ../sass/material_design_for_web.scss */
+/* line 202, ../sass/material_design_for_web.scss */
 .material-design-radio input[type='radio'] {
   z-index: 1;
   position: absolute;
@@ -247,7 +260,7 @@ input[type='radio'][disabled] ~ .check {
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-/* line 198, ../sass/material_design_for_web.scss */
+/* line 211, ../sass/material_design_for_web.scss */
 .material-design-radio .check {
   position: relative;
   display: inline-block;
@@ -262,7 +275,7 @@ input[type='radio'][disabled] ~ .check {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 208, ../sass/material_design_for_web.scss */
+/* line 221, ../sass/material_design_for_web.scss */
 .material-design-radio .check:after {
   content: "";
   position: relative;
@@ -299,7 +312,7 @@ input[type='radio'][disabled] ~ .check {
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
 }
-/* line 225, ../sass/material_design_for_web.scss */
+/* line 238, ../sass/material_design_for_web.scss */
 .material-design-radio input[type='radio']:checked ~ .check:after {
   background: green;
   margin: 3px;
@@ -315,7 +328,7 @@ input[type='radio'][disabled] ~ .check {
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
 }
-/* line 232, ../sass/material_design_for_web.scss */
+/* line 245, ../sass/material_design_for_web.scss */
 .material-design-radio .ripple {
   position: absolute;
   top: -1px;
@@ -332,7 +345,7 @@ input[type='radio'][disabled] ~ .check {
   -webkit-transform: scale(0, 0);
   transform: scale(0, 0);
 }
-/* line 243, ../sass/material_design_for_web.scss */
+/* line 256, ../sass/material_design_for_web.scss */
 .material-design-radio .ripple.show {
   -webkit-animation-name: ripple-large;
   -moz-animation-name: ripple-large;
@@ -352,15 +365,15 @@ input[type='radio'][disabled] ~ .check {
 }
 
 /* -- switch -- */
-/* line 258, ../sass/material_design_for_web.scss */
+/* line 271, ../sass/material_design_for_web.scss */
 .material-design-switch {
   position: relative;
 }
-/* line 260, ../sass/material_design_for_web.scss */
+/* line 273, ../sass/material_design_for_web.scss */
 .material-design-switch * {
   vertical-align: middle;
 }
-/* line 263, ../sass/material_design_for_web.scss */
+/* line 276, ../sass/material_design_for_web.scss */
 .material-design-switch input[type='checkbox'] {
   position: absolute;
   z-index: 1;
@@ -370,20 +383,20 @@ input[type='radio'][disabled] ~ .check {
   height: 20px;
   cursor: pointer;
 }
-/* line 272, ../sass/material_design_for_web.scss */
+/* line 285, ../sass/material_design_for_web.scss */
 .material-design-switch input[type='checkbox'][disabled] {
   cursor: not-allowed;
 }
-/* line 275, ../sass/material_design_for_web.scss */
+/* line 288, ../sass/material_design_for_web.scss */
 .material-design-switch input[type='checkbox'][disabled] ~ .check {
   background: #ddd;
 }
-/* line 277, ../sass/material_design_for_web.scss */
+/* line 290, ../sass/material_design_for_web.scss */
 .material-design-switch input[type='checkbox'][disabled] ~ .check:after {
   border-color: #ddd;
   background: #ddd;
 }
-/* line 282, ../sass/material_design_for_web.scss */
+/* line 295, ../sass/material_design_for_web.scss */
 .material-design-switch .check {
   position: relative;
   top: 50%;
@@ -396,7 +409,7 @@ input[type='radio'][disabled] ~ .check {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 293, ../sass/material_design_for_web.scss */
+/* line 306, ../sass/material_design_for_web.scss */
 .material-design-switch .check:after {
   content: "";
   position: absolute;
@@ -435,21 +448,21 @@ input[type='radio'][disabled] ~ .check {
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
 }
-/* line 312, ../sass/material_design_for_web.scss */
+/* line 325, ../sass/material_design_for_web.scss */
 .material-design-switch input[type='checkbox']:checked ~ .check {
   background: green;
 }
-/* line 314, ../sass/material_design_for_web.scss */
+/* line 327, ../sass/material_design_for_web.scss */
 .material-design-switch input[type='checkbox']:checked ~ .check:after {
   left: 20px;
   border-color: green;
   background: green;
 }
-/* line 319, ../sass/material_design_for_web.scss */
+/* line 332, ../sass/material_design_for_web.scss */
 .material-design-switch input[type='checkbox']:checked ~ .check .ripple {
   left: -10px;
 }
-/* line 323, ../sass/material_design_for_web.scss */
+/* line 336, ../sass/material_design_for_web.scss */
 .material-design-switch .ripple {
   position: absolute;
   top: -10px;
@@ -466,7 +479,7 @@ input[type='radio'][disabled] ~ .check {
   -webkit-transform: scale(0, 0);
   transform: scale(0, 0);
 }
-/* line 336, ../sass/material_design_for_web.scss */
+/* line 349, ../sass/material_design_for_web.scss */
 .material-design-switch .ripple.show {
   -webkit-animation-name: ripple-large;
   -moz-animation-name: ripple-large;
@@ -486,7 +499,7 @@ input[type='radio'][disabled] ~ .check {
 }
 
 /* -- button -- */
-/* line 344, ../sass/material_design_for_web.scss */
+/* line 357, ../sass/material_design_for_web.scss */
 button, a {
   position: relative;
   display: block;
@@ -494,7 +507,7 @@ button, a {
   cursor: pointer;
   overflow: hidden;
 }
-/* line 350, ../sass/material_design_for_web.scss */
+/* line 363, ../sass/material_design_for_web.scss */
 button .ripple, a .ripple {
   position: absolute;
   background: rgba(0, 0, 0, 0.15);
@@ -507,7 +520,7 @@ button .ripple, a .ripple {
   -webkit-transform: scale(0, 0);
   transform: scale(0, 0);
 }
-/* line 357, ../sass/material_design_for_web.scss */
+/* line 370, ../sass/material_design_for_web.scss */
 button .ripple.show, a .ripple.show {
   -webkit-animation-name: ripple;
   -moz-animation-name: ripple;
