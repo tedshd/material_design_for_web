@@ -121,6 +121,9 @@
         ripple.style.top = top + 'px';
         ripple.style.left = left + 'px';
         ripple.classList.add('show');
+        target.addEventListener('animationend', function () {
+            ripple.classList.remove('show');
+        });
         return false;
     };
 
