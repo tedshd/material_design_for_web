@@ -1,0 +1,44 @@
+/**
+ *
+ * @authors Ted Shiu (tedshd@gmail.com)
+ * @date    2016-03-10 00:30:21
+ * @version $Id$
+ */
+/* line 13, ../sass/material_design_select.scss */
+.material-design-form-select {
+  position: relative;
+  display: inline-block;
+}
+/* line 16, ../sass/material_design_select.scss */
+.material-design-form-select::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -7px;
+  width: 10px;
+  height: 10px;
+  border-left: solid 2px #999;
+  border-bottom: solid 2px #999;
+  box-sizing: border-box;
+  transform: rotate(-45deg);
+}
+/* line 30, ../sass/material_design_select.scss */
+.material-design-form-select select {
+  padding: 5px 30px 5px 5px;
+  border: solid 1px #eee;
+  border-radius: 1px;
+  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.2);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  font-size: 16px;
+  line-height: 1;
+}
+/* line 40, ../sass/material_design_select.scss */
+.material-design-form-select select:focus {
+  outline: none;
+  outline-offset: 0;
+  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.7);
+}
